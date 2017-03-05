@@ -1,0 +1,12 @@
+<div class="wellll">
+    <form>
+        <div class="input-group">
+            <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" ng-click="images.getImage()">Search</button>
+                </span>
+            <input type="text" class="form-control" placeholder="SKU..." ng-model="images.search">
+        </div>
+        <!-- /input-group -->
+    </form>
+    <img ng-src="{{images.imageUrl}}" alt="SKU Image" class="img-thumbnail img-responsive">
+</div>

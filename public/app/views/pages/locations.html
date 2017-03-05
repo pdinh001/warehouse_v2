@@ -1,0 +1,30 @@
+<div>
+    <div class="input-group">
+        <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </span>
+        <input type="text" class="form-control" placeholder="SKU..." ng-model="search.sku" ng-click="locations.page = 0">
+    </div>
+    <br>
+    <table class="table table-bordered">
+        <tr class="active">
+            <th>SKU</th>
+            <th>QTY</th>
+            <th>Location</th>
+        </tr>
+        <tr ng-repeat="sku in locations.skuLocations | filter: search | limitTo: 10 : locations.page | orderBy: ['sku', 'location']">
+            <td>{{sku.sku}}</td>
+            <td>{{sku.qty}}</td>
+            <td>{{sku.location}}</td>
+        </tr>
+
+    </table>
+</div>
+<div>
+    <nav aria-label="...">
+        <ul class="pager">
+            <li ng-click="locations.prevPage()"><a href="">Previous</a></li>
+            <li ng-click="locations.nextPage()"><a href="">Next</a></li>
+        </ul>
+    </nav>
+</div>
